@@ -1,0 +1,2 @@
+C:\Users\xvsnf\source\repos\CMP307\CMP307\CMP307.csproj;x86
+C:\Users\xvsnf\source\repos\CMP307\MeetingLib\MeetingLib.csproj;x86

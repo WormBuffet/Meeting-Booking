@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="CMP307.AddParticipants"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMP307"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel x:Name="addParticipants" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="72" Background="#549CDC" CornerRadius="20" Width="596">
+            <TextBlock Text="Add Participants!" Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Margin="0, 0, 0 , 28" Foreground="White"/>
+
+            <TextBox x:Name="txtPName" PlaceholderText="Participant Username" Margin="0, 0, 0 , 16" Background="White" Foreground="#549CDC" FontSize="20"/>
+
+            <Button x:Name="btnPInvite" Content="Add User!" Background="White" FontSize="18" Foreground="#549CDC" Margin="0, 0, 0 , 16" Click="btnPInvite_Click"/>
+            <TextBlock x:Name="txtErr" Foreground="#E35D62" TextDecorations="Underline" FontSize="16" Margin="0, 0, 0 , 16"/>
+
+            <TextBlock Text="Participant List:" FontSize="24" Margin="0, 0, 0 , 16" Foreground="White"/>
+            <ListView x:Name="lstParticipants" >
+                
+            </ListView>
+            <Button x:Name="btnPFinish" Content="Finish" Background="White" FontSize="18" Foreground="#549CDC" Margin="0, 0, 0 , 16" Click="btnPInvite_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

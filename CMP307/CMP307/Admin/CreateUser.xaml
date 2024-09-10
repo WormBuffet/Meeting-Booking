@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="CMP307.Admin.CreateUser"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMP307.Admin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel x:Name="createPanel" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="48" Background="#C24353" CornerRadius="20">
+            <TextBlock Text="Create User Account" Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Margin="0, 0, 0 , 20" Foreground="White"/>
+            <TextBox x:Name="txtUsername" PlaceholderText="Username" Margin="0, 0, 0 , 12" Background="White" Foreground="#C24353" FontSize="16"/>
+            <PasswordBox x:Name="txtPassword" PlaceholderText="Password" Margin="0, 0, 0 , 12" Background="White" Foreground="#C24353" FontSize="16"/>
+            <Button x:Name="btnAdmin" Content="Create User" Background="White" FontSize="14" Foreground="#C24353" Margin="0, 0, 0 , 12" Click="btnAdmin_Click"/>
+            <Button x:Name="btnBack" Content="Go Back" Background="White" FontSize="14" Foreground="#C24353" Margin="0, 0, 0 , 12" Click="btnBack_Click"/>
+            <TextBlock x:Name="txtErr" Foreground="#549CDC" TextDecorations="Underline" FontSize="12" Visibility="Collapsed"/>
+        </StackPanel>
+    </Grid>
+</Page>

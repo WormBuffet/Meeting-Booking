@@ -1,0 +1,79 @@
+﻿<Page
+    x:Class="CMP307.EditMeeting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMP307"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="btnEMBack" Content="Back" Background="#549CDC" FontSize="12" Foreground="White" Margin="0, 0, 0 , 16" Click="btnEMBack_Click" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <StackPanel x:Name="meetingPanel" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="48" Background="#549CDC" CornerRadius="20">
+            <TextBlock Text="Edit Meeting!" Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Margin="0, 0, 0 , 16" Foreground="White"/>
+
+            <TextBlock Text="Meeting Start Time:" Foreground="White" FontSize="16"/>
+            <TimePicker x:Name="txtEMStartTime"  Margin="0, 0, 0 , 16" Background="White" Foreground="#549CDC" FontSize="16"/>
+
+            <TextBlock Text="Meeting End Time:" Foreground="White" FontSize="16"/>
+            <TimePicker x:Name="txtEMEndTime"  Margin="0, 0, 0 , 16" Background="White" Foreground="#549CDC" FontSize="16"/>
+
+            <TextBox x:Name="txtEMName" PlaceholderText="Meeting Name (8-128 Characters)" Margin="0, 0, 0 , 16" Background="White" Foreground="#549CDC" FontSize="16"/>
+
+            <ComboBox x:Name="cmbEMRoom" MaxWidth="200" Background="White" Foreground="#549CDC" Margin="0, 0, 0 , 16" PlaceholderText="Room Name" Height="36" FontSize="16" ItemsSource="{x:Bind rooms}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock>
+                                <Run Text="{Binding Path=Name}"/>
+                                <Run Text=" (Capacity:"/>
+                                <Run Text="{Binding Path=Capacity}"/>
+                                <Run Text=")"/>
+                            </TextBlock>
+                            <!-- <TextBlock Text="{Binding Path=Name}"/>
+                            <TextBlock Text="{Binding Path=Capacity}"/> -->
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <Button x:Name="btnEMCont" Content="Continue" Background="White" FontSize="16" Foreground="#549CDC" Margin="0, 0, 0 , 16" Click="btnEMCont_Click"/>
+            <Button x:Name="btnEMDelete" Content="Delete Meeting" Background="#E35D62" FontSize="14" Foreground="White" Margin="0, 0, 0 , 16" Click="btnEMDelete_Click"/>
+            <TextBlock x:Name="txtErr" Foreground="#E35D62" TextDecorations="Underline" FontSize="12" Visibility="Collapsed"/>
+        </StackPanel>
+
+        <!-- StackPanel for Adding Users to the Meeting -->
+        <StackPanel x:Name="addParticipants" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="48" Background="#549CDC" CornerRadius="20">
+            <TextBlock Text="Add Participants!" Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Margin="0, 0, 0 , 16" Foreground="White"/>
+
+            <TextBox x:Name="txtEPName" PlaceholderText="Participant Username" Margin="0, 0, 0 , 16" Background="White" Foreground="#549CDC" FontSize="20"/>
+
+            <Button x:Name="btnEPInvite" Content="Add User!" Background="White" FontSize="16" Foreground="#549CDC" Margin="0, 0, 0 , 16" Click="btnEPInvite_Click"/>
+
+            <TextBlock Text="Participant List:" FontSize="20" Margin="0, 0, 0 , 16" Foreground="White"/>
+            <ListView x:Name="lstParticipants" MinHeight="75" MaxHeight="75" Margin="0, 0, 0 , 16" IsItemClickEnabled="True" ItemClick="lstParticipants_ItemClick" ItemsSource="{x:Bind persons}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock x:Name="txtEPUsername" Text="{Binding Username}" Foreground="White" FontSize="12"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TextBlock x:Name="txtEPErr" Foreground="#E35D62" TextDecorations="Underline" FontSize="16" Margin="0, 0, 0 , 16"/>
+            <TextBlock x:Name="txtEPHint" Foreground="White" FontSize="16" Margin="0, 0, 0 , 16"/>
+        </StackPanel>
+    </Grid>
+</Page>

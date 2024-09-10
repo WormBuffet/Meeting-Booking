@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="CMP307.Admin.AdminHub"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CMP307.Admin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel x:Name="meetingPanel" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="48" Background="#C24353" CornerRadius="20">
+            <TextBlock Text="Admin Panel" Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" Margin="0, 0, 0 , 16" Foreground="White" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Button x:Name="btnUser" Content="User Hub" Background="White" FontSize="20" Foreground="#C24353" Margin="0, 0, 0 , 16" Click="btnUser_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="btnRoom" Content="Room Hub" Background="White" FontSize="20" Foreground="#C24353" Margin="0, 0, 0 , 16" Click="btnRoom_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="btnLogout" Background="#C24353" FontSize="16" Foreground="White" Margin="0, 0, 0 , 16" Click="btnLogout_Click" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock TextDecorations="Underline">
+                    Logout
+                </TextBlock>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

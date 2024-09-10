@@ -1,0 +1,14 @@
+ADMIN: 
+
+- Username: NiallB, Password: flos112
+
+USERS:
+- Username: GeneW, Password: papaver358
+- Username: JakeJ, Password: LatinWord7
+- Username: BryanN, Password: Rosa56
+- Username: SpencerS, Password: BigFish19
+- Username: ChrisY, Password: B013tu5
+- Username: FlorenceC, Password: DrPepp3r
+- Username: GriffinW, Password: EEE15
+- Username: DonatoB, Password: QuattroFormaggi
+- Username: DanW, Password: RedBreloom
